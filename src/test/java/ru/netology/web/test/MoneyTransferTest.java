@@ -64,11 +64,11 @@ public class MoneyTransferTest {
                 () -> assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard));
     }
 
-//    @Test
-//    void shouldErrorMassage() {
-//        var amount = generateValidAmount(firstCardBalance);
-//        var transferPage = dashboardPage.selectCardToTransfer(firstCardInfo);
-//        transferPage.makeTransfer(String.valueOf(amount), secondCardInfo);
-//        transferPage.findErrorMessage("Ошибка! Произошла ошибка");
-//    }
+    @Test
+    void shouldErrorMassage() {
+        var amount = generateInvalidAmount(firstCardBalance);
+        var transferPage = dashboardPage.selectCardToTransfer(firstCardInfo);
+        transferPage.makeTransfer(String.valueOf(amount), secondCardInfo);
+        transferPage.findErrorMessage("Ошибка! Произошла ошибка");
+    }
 }
