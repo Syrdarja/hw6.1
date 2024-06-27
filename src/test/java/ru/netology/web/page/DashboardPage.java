@@ -31,9 +31,10 @@ public class DashboardPage {
         cards.findBy(Condition.attribute("data-test-id", cardInfo.getTestId())).$("button").click();
         return new TransferPage();
     }
-    public void reloadDashboardPage(){
-reloadButton.click();
-heading.shouldBe(visible);
+
+    public void reloadDashboardPage() {
+        reloadButton.click();
+        heading.shouldBe(visible);
     }
 
     private int extractBalance(String text) {
